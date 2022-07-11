@@ -31,11 +31,22 @@ const inputField = document.querySelector(".formSection");
 const buttonField = document.querySelector(".btn");
 const textField = document.querySelector(".content");
 
-buttonField.addEventListener("submit", (e)=>{
+inputField.addEventListener("submit", (e)=>{
+   e.preventDefault(); 
+  
+    let input = document.getElementById("number").value;
     
-    e.preventDefault();
-
-    let numberInput = inputField.value;
-    console.log(numberInput);
-
+    let random = Math.floor(Math.random()*9);
+    if (input < 0 || input > 9 || isNaN(input)) {
+      textField.innerHTML = `<p>${text[random]}</p>`;
+    }
+    else{
+      let moreInput = text.slice(0,input);
+      
+      moreInput= moreInput.map(item => {
+        return `<p>${item}</p>`
+      }).join("");
+      
+      textField.innerHTML = moreInput;
+    }
 });

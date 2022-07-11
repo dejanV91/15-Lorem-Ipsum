@@ -73,4 +73,5 @@ body{
 .content p{
     color: rgb(156, 156, 156);
     text-align: center;
+    margin-bottom: 30px;
 }
